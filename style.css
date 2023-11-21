@@ -43,14 +43,26 @@ body {
     margin-right: 5px;
 }
 
+#cursor {
+    color: #00ff00;
+    animation: blink 1s infinite; /* Blink animation */
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
 #answer {
     padding: 5px;
     font-family: 'Courier New', Courier, monospace;
     background-color: #000;
     color: #00ff00;
-    border: 1px solid #00ff00;
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
     width: 100%;
-    box-sizing: border-box; /* Include padding and border in the element's total width */
+    box-sizing: border-box;
 }
 
 #answer::placeholder {
