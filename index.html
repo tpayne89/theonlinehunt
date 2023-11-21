@@ -12,8 +12,7 @@
             <pre id="output"></pre>
             <div id="input-container">
                 <span id="prompt">Your Answer:</span>
-                <input type="text" id="answer" placeholder="Type your answer">
-                <button onclick="checkAnswer()">Submit</button>
+                <input type="text" id="answer" placeholder="Type your answer" onkeydown="checkEnter(event)">
             </div>
         </div>
         <div id="result"></div>
