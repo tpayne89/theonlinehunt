@@ -20,8 +20,9 @@ function showQuestion() {
     const question = questions[currentQuestionIndex];
     const outputElement = document.getElementById('output');
     outputElement.textContent = '';
-    typeText(`$ ${question}\n`, outputElement);
+    typeText(`${question}\n`, outputElement);
 }
+
 
 function checkEnter(event) {
     if (event.key === 'Enter') {
