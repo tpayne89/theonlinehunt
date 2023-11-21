@@ -10,7 +10,7 @@ function typeText(text, element, speed = 50) {
         index++;
         if (index === text.length) {
             clearInterval(interval);
-            document.getElementById('answer').focus(); // Focus on the input after typing
+            document.getElementById('answer').focus();
         }
     }, speed);
 }
@@ -18,8 +18,14 @@ function typeText(text, element, speed = 50) {
 function showQuestion() {
     const question = questions[currentQuestionIndex];
     const outputElement = document.getElementById('output');
-    outputElement.textContent = ''; // Clear previous content
+    outputElement.textContent = '';
     typeText(`$ ${question}\n`, outputElement);
+}
+
+function checkEnter(event) {
+    if (event.key === 'Enter') {
+        checkAnswer();
+    }
 }
 
 function checkAnswer() {
@@ -27,7 +33,7 @@ function checkAnswer() {
     const correctAnswer = answers[currentQuestionIndex].toLowerCase();
 
     const resultElement = document.getElementById('result');
-    resultElement.textContent = ''; // Clear previous result
+    resultElement.textContent = '';
 
     if (userAnswer === correctAnswer) {
         resultElement.textContent = 'Correct! Moving to the next question.';
@@ -36,12 +42,15 @@ function checkAnswer() {
         if (currentQuestionIndex < questions.length) {
             showQuestion();
         } else {
-            document.getElementById('input-container').style.display = 'none'; // Hide input container
+            document.getElementById('input-container').style.display = 'none';
             resultElement.textContent = 'Congratulations! You completed the treasure hunt.';
         }
     } else {
         resultElement.textContent = 'Incorrect. Try again.';
     }
+
+    // Clear the answer input
+    document.getElementById('answer').value = '';
 }
 
 // Initial setup
