@@ -50,5 +50,5 @@ body {
 }
 
 #answer::placeholder {
-    color: #00ff00;
+    color: transparent; /* Make the placeholder text transparent */
 }
