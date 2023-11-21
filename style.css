@@ -6,7 +6,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #000; /* Set background color to black */
+    background-color: #f9f5e8; /* Faded cream color for the outer material */
     color: #00ff00; /* Set text color to green */
 }
 
@@ -17,17 +17,20 @@ body {
 #terminal {
     background-color: #000;
     padding: 20px;
-    border: 2px solid #00ff00; /* Set border color to green */
+    border: 5px solid #00ff00; /* Increased border size */
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3); /* Set box shadow color to green */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    width: 100%;
+    max-width: 600px; /* Set maximum width for the terminal */
+    margin: 0 auto; /* Center the terminal on the page */
 }
 
 #output {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 10px;
-    max-height: 300px; /* Set maximum height for output */
-    overflow-y: auto; /* Enable vertical scrolling if needed */
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 #input-container {
@@ -43,25 +46,13 @@ body {
 #answer {
     padding: 5px;
     font-family: 'Courier New', Courier, monospace;
-    background-color: #000; /* Set background color to black */
-    color: #00ff00; /* Set text color to green */
-    border: 1px solid #00ff00; /* Set border color to green */
+    background-color: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
 #answer::placeholder {
-    color: #00ff00; /* Set placeholder color to green */
-}
-
-button {
-    padding: 6px 10px;
-    margin-left: 5px;
-    background-color: #00ff00; /* Set background color to green */
-    color: #000; /* Set text color to black */
-    border: 1px solid #00ff00; /* Set border color to green */
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #000; /* Set background color to black on hover */
-    color: #00ff00; /* Set text color to green on hover */
+    color: #00ff00;
 }
