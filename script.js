@@ -15,6 +15,7 @@ function typeText(text, element, speed = 50) {
     }, speed);
 }
 
+
 function showQuestion() {
     const question = questions[currentQuestionIndex];
     const outputElement = document.getElementById('output');
