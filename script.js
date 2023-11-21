@@ -1,27 +1,46 @@
-const questions = ["Question 1?", "Question 2?", "Question 3?"];
-const answers = ["Answer1", "Answer2", "Answer3"];
+const questions = ["What is the capital of France?", "Who wrote Romeo and Juliet?", "What is the square root of 144?"];
+const answers = ["Paris", "William Shakespeare", "12"];
 
 let currentQuestionIndex = 0;
 
+function typeText(text, element, speed = 50) {
+    let index = 0;
+    const interval = setInterval(() => {
+        element.textContent += text[index];
+        index++;
+        if (index === text.length) {
+            clearInterval(interval);
+            document.getElementById('answer').focus(); // Focus on the input after typing
+        }
+    }, speed);
+}
+
 function showQuestion() {
-    document.getElementById('question').textContent = questions[currentQuestionIndex];
+    const question = questions[currentQuestionIndex];
+    const outputElement = document.getElementById('output');
+    outputElement.textContent = ''; // Clear previous content
+    typeText(`$ ${question}\n`, outputElement);
 }
 
 function checkAnswer() {
     const userAnswer = document.getElementById('answer').value.trim().toLowerCase();
     const correctAnswer = answers[currentQuestionIndex].toLowerCase();
 
+    const resultElement = document.getElementById('result');
+    resultElement.textContent = ''; // Clear previous result
+
     if (userAnswer === correctAnswer) {
-        document.getElementById('result').textContent = 'Correct! Moving to the next question.';
+        resultElement.textContent = 'Correct! Moving to the next question.';
         currentQuestionIndex++;
 
         if (currentQuestionIndex < questions.length) {
             showQuestion();
         } else {
-            document.getElementById('question-container').innerHTML = '<h2>Congratulations! You completed the treasure hunt.</h2>';
+            document.getElementById('input-container').style.display = 'none'; // Hide input container
+            resultElement.textContent = 'Congratulations! You completed the treasure hunt.';
         }
     } else {
-        document.getElementById('result').textContent = 'Incorrect. Try again.';
+        resultElement.textContent = 'Incorrect. Try again.';
     }
 }
 
