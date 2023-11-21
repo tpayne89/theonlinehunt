@@ -23,7 +23,7 @@ body {
     border: 10px solid #f9f5e8; /* Increased thickness of cream border */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-    height: 70vh; /* Adjusted height to 70% of the viewport height */
+    min-height: 200px; /* Adjusted minimum height */
 }
 
 #output {
