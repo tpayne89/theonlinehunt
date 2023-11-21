@@ -63,5 +63,9 @@ function showCongratulations() {
     }, 3000); // Redirect after 3 seconds (adjust as needed)
 }
 
+function showLeaderboard() {
+    window.location.href = 'leaderboard.html';
+}
+
 // Initial setup
 showQuestion();
