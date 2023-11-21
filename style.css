@@ -44,12 +44,13 @@ body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #000;
     color: #00ff00;
-    border: 1px solid #00ff00; /* Decreased thickness of green border */
+    border: none; /* Removed the border property */
     outline: none;
     width: 100%;
     box-sizing: border-box;
     caret-color: #00ff00;
 }
+
 
 #answer::placeholder {
     color: transparent;
