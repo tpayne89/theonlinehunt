@@ -19,7 +19,7 @@ function showQuestion() {
     const question = questions[currentQuestionIndex];
     const outputElement = document.getElementById('output');
     outputElement.textContent = '';
-    typeText(`${question}\n`, outputElement); // Remove the '$' character
+    typeText(`$ ${question}\n`, outputElement);
 }
 
 function checkEnter(event) {
@@ -42,8 +42,7 @@ function checkAnswer() {
         if (currentQuestionIndex < questions.length) {
             showQuestion();
         } else {
-            document.getElementById('input-container').style.display = 'none';
-            resultElement.textContent = 'Congratulations! You completed the treasure hunt.';
+            showCongratulations();
         }
     } else {
         resultElement.textContent = 'Incorrect. Try again.';
@@ -51,6 +50,17 @@ function checkAnswer() {
 
     // Clear the answer input
     document.getElementById('answer').value = '';
+}
+
+function showCongratulations() {
+    document.getElementById('input-container').style.display = 'none';
+    const resultElement = document.getElementById('result');
+    resultElement.textContent = 'Congratulations! You completed the treasure hunt. Redirecting to the leaderboard...';
+
+    // Redirect to the leaderboard page after a delay
+    setTimeout(() => {
+        window.location.href = 'leaderboard.html';
+    }, 3000); // Redirect after 3 seconds (adjust as needed)
 }
 
 // Initial setup
