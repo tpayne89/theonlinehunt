@@ -6,7 +6,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #000;
+    background-color: #000; /* Set background color to black */
     color: #00ff00; /* Set text color to green */
 }
 
@@ -26,6 +26,8 @@ body {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 10px;
+    max-height: 300px; /* Set maximum height for output */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
 }
 
 #input-container {
@@ -41,9 +43,25 @@ body {
 #answer {
     padding: 5px;
     font-family: 'Courier New', Courier, monospace;
+    background-color: #000; /* Set background color to black */
+    color: #00ff00; /* Set text color to green */
+    border: 1px solid #00ff00; /* Set border color to green */
 }
 
-#result {
-    margin-top: 20px;
-    font-weight: bold;
+#answer::placeholder {
+    color: #00ff00; /* Set placeholder color to green */
+}
+
+button {
+    padding: 6px 10px;
+    margin-left: 5px;
+    background-color: #00ff00; /* Set background color to green */
+    color: #000; /* Set text color to black */
+    border: 1px solid #00ff00; /* Set border color to green */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000; /* Set background color to black on hover */
+    color: #00ff00; /* Set text color to green on hover */
 }
