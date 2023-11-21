@@ -19,7 +19,7 @@ function showQuestion() {
     const question = questions[currentQuestionIndex];
     const outputElement = document.getElementById('output');
     outputElement.textContent = '';
-    typeText(`$ ${question}\n`, outputElement);
+    typeText(`${question}\n`, outputElement); // Remove the '$' character
 }
 
 function checkEnter(event) {
