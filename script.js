@@ -91,13 +91,8 @@ function showLeaderboard() {
         window.location.href = 'https://tpayne89.github.io/theonlinehunt/'; // Change the URL to your main page
     });
 
-    // Create a container div for the button
-    const buttonContainer = document.createElement('div');
-    buttonContainer.classList.add('button-container'); // Add a class for styling (see CSS section below)
-    buttonContainer.appendChild(homeButton);
-
-    // Append the container div to the output element
-    outputElement.appendChild(buttonContainer);
+    // Append the "Home" button to the output element
+    outputElement.appendChild(homeButton);
 }
 
 // Initial setup
