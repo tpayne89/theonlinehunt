@@ -15,14 +15,12 @@ function typeText(text, element, speed = 50) {
     }, speed);
 }
 
-
 function showQuestion() {
     const question = questions[currentQuestionIndex];
     const outputElement = document.getElementById('output');
     outputElement.textContent = '';
-    typeText(`${question}\n`, outputElement);
+    typeText(`${question}\n`, outputElement); // Removed the "$" sign
 }
-
 
 function checkEnter(event) {
     if (event.key === 'Enter') {
@@ -66,25 +64,14 @@ function showCongratulations() {
 }
 
 function showLeaderboard() {
-    window.location.href = 'leaderboard.html';
-}
-
-// Dummy data for demonstration purposes
-const leaderboardData = [
-    { name: 'Player 1', position: 1 },
-    { name: 'Player 2', position: 2 },
-    // Add more entries as needed
-];
-
-function showLeaderboard() {
     const outputElement = document.getElementById('output');
     outputElement.innerHTML = '<h2>Leaderboard</h2>';
-    
+
     const leaderboardTable = document.createElement('table');
     leaderboardTable.id = 'leaderboard-table';
 
     const tableHead = document.createElement('thead');
-    tableHead.innerHTML = '<tr><th>Name</th><th>Position</th></tr>';
+    tableHead.innerHTML = '<tr><th>Player Name</th><th>Position</th></tr>';
     leaderboardTable.appendChild(tableHead);
 
     const tableBody = document.createElement('tbody');
@@ -96,6 +83,16 @@ function showLeaderboard() {
     leaderboardTable.appendChild(tableBody);
 
     outputElement.appendChild(leaderboardTable);
+
+    // Create a "Home" button
+    const homeButton = document.createElement('button');
+    homeButton.textContent = 'Home';
+    homeButton.addEventListener('click', () => {
+        window.location.href = 'https://tpayne89.github.io/theonlinehunt'; // Change the URL to your main page
+    });
+
+    // Append the "Home" button to the output element
+    outputElement.appendChild(homeButton);
 }
 
 // Initial setup
