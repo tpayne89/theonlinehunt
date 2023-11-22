@@ -59,7 +59,7 @@ function showCongratulations() {
 
     // Redirect to the leaderboard page after a delay
     setTimeout(() => {
-        window.location.href = 'leaderboard.html';
+        window.location.href = 'https://tpayne89.github.io/theonlinehunt/leaderboard.html'; // Updated URL
     }, 3000); // Redirect after 3 seconds (adjust as needed)
 }
 
@@ -88,11 +88,14 @@ function showLeaderboard() {
     const homeButton = document.createElement('button');
     homeButton.textContent = 'Home';
     homeButton.addEventListener('click', () => {
-        window.location.href = 'https://tpayne89.github.io/theonlinehunt/'; // Change the URL to your main page
+        window.location.href = 'https://tpayne89.github.io/theonlinehunt/index.html'; // Updated URL
     });
 
     // Append the "Home" button to the output element
-    outputElement.appendChild(homeButton);
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('button-container');
+    buttonContainer.appendChild(homeButton);
+    outputElement.appendChild(buttonContainer);
 }
 
 // Initial setup
