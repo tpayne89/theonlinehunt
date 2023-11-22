@@ -88,11 +88,16 @@ function showLeaderboard() {
     const homeButton = document.createElement('button');
     homeButton.textContent = 'Home';
     homeButton.addEventListener('click', () => {
-        window.location.href = 'https://tpayne89.github.io/theonlinehunt'; // Change the URL to your main page
+        window.location.href = 'https://tpayne89.github.io/theonlinehunt/'; // Change the URL to your main page
     });
 
-    // Append the "Home" button to the output element
-    outputElement.appendChild(homeButton);
+    // Create a container div for the button
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('button-container'); // Add a class for styling (see CSS section below)
+    buttonContainer.appendChild(homeButton);
+
+    // Append the container div to the output element
+    outputElement.appendChild(buttonContainer);
 }
 
 // Initial setup
