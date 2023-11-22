@@ -84,7 +84,7 @@ function showLeaderboard() {
     leaderboardTable.id = 'leaderboard-table';
 
     const tableHead = document.createElement('thead');
-    tableHead.innerHTML = '<tr><th>Player Name</th><th>Position</th></tr>';
+    tableHead.innerHTML = '<tr><th>Name</th><th>Position</th></tr>';
     leaderboardTable.appendChild(tableHead);
 
     const tableBody = document.createElement('tbody');
