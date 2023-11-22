@@ -63,10 +63,13 @@ function showCongratulations() {
     }, 3000); // Redirect after 3 seconds (adjust as needed)
 }
 
+// Your existing JavaScript code, including the showLeaderboard() and showCongratulations() functions
+// ...
+
 function showLeaderboard() {
     const outputElement = document.getElementById('output');
     outputElement.innerHTML = '<h2>Leaderboard</h2>';
-
+    
     const leaderboardTable = document.createElement('table');
     leaderboardTable.id = 'leaderboard-table';
 
@@ -88,7 +91,7 @@ function showLeaderboard() {
     const homeButton = document.createElement('button');
     homeButton.textContent = 'Home';
     homeButton.addEventListener('click', () => {
-        window.location.href = 'https://tpayne89.github.io/theonlinehunt/index.html'; // Updated URL
+        window.location.href = 'index.html'; // Updated URL
     });
 
     // Append the "Home" button to the output element
@@ -100,3 +103,4 @@ function showLeaderboard() {
 
 // Initial setup
 showQuestion();
+
