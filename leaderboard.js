@@ -6,25 +6,18 @@ const leaderboardData = [
 ];
 
 function showLeaderboard() {
-    const outputElement = document.getElementById('output');
-    outputElement.innerHTML = '<h2>Leaderboard</h2>';
-    
-    const leaderboardTable = document.createElement('table');
-    leaderboardTable.id = 'leaderboard-table';
+    const tableBody = document.querySelector('#leaderboard-table tbody');
 
-    const tableHead = document.createElement('thead');
-    tableHead.innerHTML = '<tr><th>Player Name</th><th>Position</th></tr>';
-    leaderboardTable.appendChild(tableHead);
-
-    const tableBody = document.createElement('tbody');
     leaderboardData.forEach((entry) => {
         const row = document.createElement('tr');
         row.innerHTML = `<td>${entry.name}</td><td>${entry.position}</td>`;
         tableBody.appendChild(row);
     });
-    leaderboardTable.appendChild(tableBody);
+}
 
-    outputElement.appendChild(leaderboardTable);
+function returnToGame() {
+    // Assuming your game page is named index.html
+    window.location.href = 'index.html';
 }
 
 // Initial setup
