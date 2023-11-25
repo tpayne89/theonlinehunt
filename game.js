@@ -55,12 +55,11 @@ function checkAnswer() {
 function showCongratulations() {
     document.getElementById('input-container').style.display = 'none';
     const resultElement = document.getElementById('result');
-    resultElement.textContent = 'Congratulations! You completed the treasure hunt. Redirecting to the leaderboard...';
+    resultElement.textContent = 'Congratulations! You completed the treasure hunt.';
+}
 
-    // Redirect to the leaderboard page after a delay
-    setTimeout(() => {
-        window.location.href = 'leaderboard.html';
-    }, 3000); // Redirect after 3 seconds (adjust as needed)
+function showLeaderboard() {
+    window.location.href = 'leaderboard.html';
 }
 
 // Initial setup
