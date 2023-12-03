@@ -1,24 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Treasure Hunt</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div id="app">
+      <div id="game-container">
         <div id="terminal">
-            <div id="output"></div>
-            <div id="input-container">
-                <input type="text" id="answer" placeholder="" onkeydown="checkEnter(event)">
-            </div>
+          <div id="output"></div>
+          <div id="input-container">
+            <input type="text" id="answer" placeholder="" />
+          </div>
         </div>
         <div id="result"></div>
-        <div class="button-container">
-            <button onclick="showLeaderboard()">Show Leaderboard</button>
-        </div>
+      </div>
+      <!-- Replace the button with an anchor tag for the leaderboard -->
+      <a href="leaderboard.html" id="leaderboardBtn">Show Leaderboard</a>
     </div>
+
+    <!-- Additional HTML for the pop-up container -->
+    <div id="congratulations-popup" class="popup-container">
+      <div id="congratulations-message"></div>
+    </div>
+
     <script src="game.js"></script>
-</body>
+  </body>
 </html>
