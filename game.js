@@ -55,6 +55,7 @@ function checkAnswer() {
 
   if (userAnswer === correctAnswer) {
     outputElement.innerHTML += `<div>Your answer: ${userAnswer} = correct</div>`;
+    currentQuestionIndex++; // Increment only if the answer is correct
   } else {
     outputElement.innerHTML += `<div class="incorrect-answer">Your answer: ${userAnswer} = incorrect</div>`;
     // You may display additional feedback here if needed
@@ -62,12 +63,10 @@ function checkAnswer() {
 
   // Save the question and answer to history
   questionHistory.push({
-    question: questions[currentQuestionIndex],
+    question: questions[currentQuestionIndex - 1], // Use the previous index
     answer: userAnswer,
     correct: userAnswer === correctAnswer,
   });
-
-  currentQuestionIndex++;
 
   if (currentQuestionIndex < questions.length) {
     showQuestion();
